@@ -1,0 +1,889 @@
+<robot name="onshape">
+ <mujoco>
+         <compiler 
+         meshdir="../meshes/" 
+         balanceinertia="true" 
+         discardvisual="false" />
+ </mujoco>
+  <link name="world"/>
+ <joint name="floating_base" type="floating">
+     <origin rpy="0 0 0" xyz="0 0 0"/>
+     <parent link="world"/>
+     <child link="finalhead"/>
+ </joint>
+<link name="finalhead">
+<visual>
+<origin xyz="0.000743331 0.0237264 0.0388336" rpy="0 0 -0.0272326" />
+<geometry>
+<mesh filename="../meshes/finalhead.stl"/>
+</geometry>
+<material name="finalhead_material">
+<color rgba="0.596078 0.176471 0.0509804 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.000743331 0.0237264 0.0388336" rpy="0 0 -0.0272326" />
+<geometry>
+<mesh filename="../meshes/finalhead.stl"/>
+</geometry>
+<material name="finalhead_material">
+<color rgba="0.596078 0.176471 0.0509804 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.00128792 0.043719 0.0086617" rpy="0 0 -0.0272326" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.00128792 0.043719 0.0086617" rpy="0 0 -0.0272326" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.000501801 0.0148621 0.0426872" rpy="0 0 0"/>
+<mass value="0.246213" />
+<inertia ixx="0.000190923" ixy="-2.34304e-06"  ixz="-7.09537e-07" iyy="0.000104956" iyz="-2.60499e-05" izz="0.000188679" />
+</inertial>
+</link>
+
+<link name="finalcoupling">
+<visual>
+<origin xyz="0.02 -2.1684e-19 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.02 -2.1684e-19 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 0 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 0 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0321744 -0.00447826 -0.00399057" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="8.34885e-05" ixy="2.51775e-05"  ixz="-2.93751e-05" iyy="0.000194407" iyz="4.24805e-06" izz="0.000198724" />
+</inertial>
+</link>
+
+<link name="finalcoupling_2">
+<visual>
+<origin xyz="0 0.04 0.0005" rpy="-3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0.04 0.0005" rpy="-3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00484149 0.03 -0.00434156" rpy="0 0 0"/>
+<mass value="0.195908" />
+<inertia ixx="0.000180844" ixy="-2.73127e-05"  ixz="-4.59263e-06" iyy="7.80517e-05" iyz="-2.73127e-05" izz="0.000180836" />
+</inertial>
+</link>
+
+<link name="finalcoupling_3">
+<visual>
+<origin xyz="9.97466e-18 0 0.0306709" rpy="3.14159 0 -3.14159" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="9.97466e-18 0 0.0306709" rpy="3.14159 0 -3.14159" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0 0.04 0.0005" rpy="3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0.04 0.0005" rpy="3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00449058 0.0278256 -0.00397826" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="0.000198727" ixy="-2.9375e-05"  ixz="-4.24805e-06" iyy="8.34859e-05" iyz="-2.51775e-05" izz="0.000194407" />
+</inertial>
+</link>
+
+<link name="finalcoupling_4">
+<visual>
+<origin xyz="0.02 0 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.02 0 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.77556e-17 -2.35922e-16 0.0306709" rpy="-3.14159 0 1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.77556e-17 -2.35922e-16 0.0306709" rpy="-3.14159 0 1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.03 -0.00417561 -0.00367555" rpy="0 0 0"/>
+<mass value="0.226526" />
+<inertia ixx="8.88271e-05" ixy="2.72343e-05"  ixz="-2.72342e-05" iyy="0.000214241" iyz="3.95007e-06" izz="0.000214249" />
+</inertial>
+</link>
+
+<link name="finalcoupling_5">
+<visual>
+<origin xyz="0.02 -4.33681e-19 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.02 -4.33681e-19 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 0 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 0 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0321744 -0.00447826 -0.00399057" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="8.34885e-05" ixy="2.51775e-05"  ixz="-2.93751e-05" iyy="0.000194407" iyz="4.24805e-06" izz="0.000198724" />
+</inertial>
+</link>
+
+<link name="finalcoupling_6">
+<visual>
+<origin xyz="0.029817 0.06 0.0005" rpy="0 -1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.029817 0.06 0.0005" rpy="0 -1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0 0.04 0.0005" rpy="-3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0.04 0.0005" rpy="-3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00447731 0.0321744 -0.00399064" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="0.000194414" ixy="-2.51723e-05"  ixz="-4.24721e-06" iyy="8.34877e-05" iyz="-2.93751e-05" izz="0.000198721" />
+</inertial>
+</link>
+
+<link name="finalcoupling_7">
+<visual>
+<origin xyz="0.02 -4.33681e-19 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.02 -4.33681e-19 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.06 -0.029817 0.0005" rpy="1.5708 0 3.14159" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.06 -0.029817 0.0005" rpy="1.5708 0 3.14159" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0321744 -0.00447737 -0.00399057" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="8.34903e-05" ixy="2.51723e-05"  ixz="-2.93751e-05" iyy="0.000194407" iyz="4.2472e-06" izz="0.000198726" />
+</inertial>
+</link>
+
+<link name="finalcoupling_8">
+<visual>
+<origin xyz="6.93889e-18 0.04 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="6.93889e-18 0.04 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00484149 0.03 -0.00434156" rpy="0 0 0"/>
+<mass value="0.195908" />
+<inertia ixx="0.000180844" ixy="-2.73127e-05"  ixz="-4.59263e-06" iyy="7.80517e-05" iyz="-2.73127e-05" izz="0.000180836" />
+</inertial>
+</link>
+
+<link name="finalcoupling_9">
+<visual>
+<origin xyz="0.029817 0.06 0.0005" rpy="1.5708 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.029817 0.06 0.0005" rpy="1.5708 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.1684e-19 0.04 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.1684e-19 0.04 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="7.15573e-18 0 -0.029317" rpy="0 0 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="7.15573e-18 0 -0.029317" rpy="0 0 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00417472 0.03 -0.00367478" rpy="0 0 0"/>
+<mass value="0.226526" />
+<inertia ixx="0.00021425" ixy="-2.72286e-05"  ixz="-3.9485e-06" iyy="8.88329e-05" iyz="-2.72287e-05" izz="0.00021424" />
+</inertial>
+</link>
+
+<link name="finalcoupling_10">
+<visual>
+<origin xyz="0.06 -0.029817 0.0005" rpy="-1.5708 -1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.06 -0.029817 0.0005" rpy="-1.5708 -1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.02 0 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.02 0 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0321744 -0.00447737 -0.00399058" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="8.34877e-05" ixy="2.51723e-05"  ixz="-2.9375e-05" iyy="0.000194407" iyz="4.24721e-06" izz="0.000198729" />
+</inertial>
+</link>
+
+<link name="finalcoupling_11">
+<visual>
+<origin xyz="0 0.04 0.0005" rpy="-3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0 0.04 0.0005" rpy="-3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00484149 0.03 -0.00434156" rpy="0 0 0"/>
+<mass value="0.195908" />
+<inertia ixx="0.000180844" ixy="-2.73127e-05"  ixz="-4.59263e-06" iyy="7.80517e-05" iyz="-2.73127e-05" izz="0.000180836" />
+</inertial>
+</link>
+
+<link name="finalcoupling_12">
+<visual>
+<origin xyz="-6.93889e-18 0.04 0.0005" rpy="-3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-6.93889e-18 0.04 0.0005" rpy="-3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-0.0301709 0.06 0.0005" rpy="-1.5708 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-0.0301709 0.06 0.0005" rpy="-1.5708 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="1.8735e-16 1.11022e-16 -0.029317" rpy="0 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="1.8735e-16 1.11022e-16 -0.029317" rpy="0 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00417555 0.03 -0.00367478" rpy="0 0 0"/>
+<mass value="0.226526" />
+<inertia ixx="0.000214248" ixy="-2.72342e-05"  ixz="-3.94929e-06" iyy="8.88339e-05" iyz="-2.72287e-05" izz="0.000214239" />
+</inertial>
+</link>
+
+<link name="finalcoupling_13">
+<visual>
+<origin xyz="0.029817 0.06 0.0005" rpy="1.5708 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.029817 0.06 0.0005" rpy="1.5708 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="2.1684e-19 0.04 0.0005" rpy="-3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="2.1684e-19 0.04 0.0005" rpy="-3.14159 -0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00447731 0.0321744 -0.00399064" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="0.000194414" ixy="-2.51723e-05"  ixz="-4.2472e-06" iyy="8.34903e-05" iyz="-2.93752e-05" izz="0.000198719" />
+</inertial>
+</link>
+
+<link name="finalcoupling_14">
+<visual>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 -1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.06 0.0301709 0.0005" rpy="1.5708 -1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0.02 0 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.02 0 0.0005" rpy="1.5708 1.5708 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.0321744 -0.00447826 -0.00399058" rpy="0 0 0"/>
+<mass value="0.211217" />
+<inertia ixx="8.34859e-05" ixy="2.51775e-05"  ixz="-2.9375e-05" iyy="0.000194407" iyz="4.24805e-06" izz="0.000198727" />
+</inertial>
+</link>
+
+<link name="finalcoupling_15">
+<visual>
+<origin xyz="-4.33681e-19 0.04 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-4.33681e-19 0.04 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalcoupling.stl"/>
+</geometry>
+<material name="finalcoupling_material">
+<color rgba="0.372549 0.533333 1 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0.00484149 0.03 -0.00434156" rpy="0 0 0"/>
+<mass value="0.195908" />
+<inertia ixx="0.000180844" ixy="-2.73127e-05"  ixz="-4.59263e-06" iyy="7.80517e-05" iyz="-2.73127e-05" izz="0.000180836" />
+</inertial>
+</link>
+
+<link name="finalend">
+<visual>
+<origin xyz="-5.12611e-16 2.44249e-15 0.0306709" rpy="-3.14159 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-5.12611e-16 2.44249e-15 0.0306709" rpy="-3.14159 0 -1.5708" />
+<geometry>
+<mesh filename="../meshes/finalrod.stl"/>
+</geometry>
+<material name="finalrod_material">
+<color rgba="1 0.996078 0.968627 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="-1.54268e-08 0.07 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalend.stl"/>
+</geometry>
+<material name="finalend_material">
+<color rgba="0.458824 0.105882 0 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="-1.54268e-08 0.07 0.0005" rpy="3.14159 0 0" />
+<geometry>
+<mesh filename="../meshes/finalend.stl"/>
+</geometry>
+<material name="finalend_material">
+<color rgba="0.458824 0.105882 0 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-1.26318e-07 0.0305856 -0.00316821" rpy="0 0 0"/>
+<mass value="0.257835" />
+<inertia ixx="0.000210588" ixy="6.25037e-10"  ixz="2.8388e-09" iyy="0.00010846" iyz="-2.77882e-05" izz="0.000204906" />
+</inertial>
+</link>
+
+<joint name="joint16" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="-1.5708 1.52168 -1.5708" />
+<parent link="finalcoupling_15" />
+<child link="finalend" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint15" type="revolute">
+<origin xyz="0.06 -0.0005 0.0005" rpy="1.5708 1.5708 0" />
+<parent link="finalcoupling_14" />
+<child link="finalcoupling_15" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint14" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="1.5708 0 1.5708" />
+<parent link="finalcoupling_13" />
+<child link="finalcoupling_14" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint13" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="0 1.5708 0" />
+<parent link="finalcoupling_12" />
+<child link="finalcoupling_13" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint12" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="0 1.5708 0" />
+<parent link="finalcoupling_11" />
+<child link="finalcoupling_12" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint11" type="revolute">
+<origin xyz="0.06 -0.0005 0.0005" rpy="1.5708 1.5708 0" />
+<parent link="finalcoupling_10" />
+<child link="finalcoupling_11" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint10" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="1.5708 0 1.5708" />
+<parent link="finalcoupling_9" />
+<child link="finalcoupling_10" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint9" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="0 1.5708 0" />
+<parent link="finalcoupling_8" />
+<child link="finalcoupling_9" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint8" type="revolute">
+<origin xyz="0.06 -0.0005 0.0005" rpy="1.5708 1.5708 0" />
+<parent link="finalcoupling_7" />
+<child link="finalcoupling_8" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint7" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="1.5708 0 1.5708" />
+<parent link="finalcoupling_6" />
+<child link="finalcoupling_7" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint6" type="revolute">
+<origin xyz="0.06 -0.0005 0.0005" rpy="1.5708 1.5708 0" />
+<parent link="finalcoupling_5" />
+<child link="finalcoupling_6" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint5" type="revolute">
+<origin xyz="0.06 -0.0005 0.0005" rpy="1.5708 0 0" />
+<parent link="finalcoupling_4" />
+<child link="finalcoupling_5" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint4" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="1.5708 0 1.5708" />
+<parent link="finalcoupling_3" />
+<child link="finalcoupling_4" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint3" type="revolute">
+<origin xyz="0.0005 0.06 0.0005" rpy="0 1.5708 0" />
+<parent link="finalcoupling_2" />
+<child link="finalcoupling_3" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint2" type="revolute">
+<origin xyz="0.06 -0.0005 0.0005" rpy="1.5708 1.5708 0" />
+<parent link="finalcoupling" />
+<child link="finalcoupling_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="joint1" type="revolute">
+<origin xyz="0.00128792 0.043719 0.0393336" rpy="0 0 1.56795" />
+<parent link="finalhead" />
+<child link="finalcoupling" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>
